@@ -64,7 +64,7 @@ public class ExampleMod implements ModInitializer {
 
     void onDeath(LivingEntity entity, DamageSource source) {
         if (!matches(entity)) return;
-        MinecraftServer server = entity.getServer();
+        MinecraftServer server = entity.level().getServer();
         if (server == null) return;
 
         MutableComponent name = Component.literal("NULL").withStyle(ChatFormatting.OBFUSCATED);
